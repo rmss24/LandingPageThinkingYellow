@@ -1,0 +1,155 @@
+.menu-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+.menu-bar a,
+.menu-open p {
+    color: white;
+    cursor: pointer;
+}
+
+.menu-close p {
+    color: black;
+    cursor: pointer;
+}
+
+/* Overlay styling */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #d1b42f;
+    z-index: 2;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    overflow: hidden; /* Ensure clipped content doesn't affect animation */
+}
+
+.menu-overlay-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2em;
+}
+
+/* Top section of overlay */
+.menu-overlay-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Center content with links and preview */
+.menu-center-content {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    margin: 4em 0;
+}
+
+.menu-links {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10rem; /* Added margin-left as requested */
+}
+
+.menu-link{
+    margin-top: 0.5rem;
+}
+
+.menu-preview {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+/* Bottom section with info */
+.menu-overlay-bottom {
+    width: 100%;
+    display: flex;
+    margin-left: 10rem; /* Added margin-left as requested */
+}
+
+/* Link styling */
+.menu-link-item {
+    width: max-content;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    overflow: hidden; /* Important for the animation */
+    margin-bottom: 0.5em; /* Spacing between menu items */
+}
+
+.menu-link-item-holder {
+    position: relative;
+    /* Default position - will be animated by GSAP */
+    transform: translateY(75px);
+}
+
+.menu-link-item-holder a {
+    color: white;
+    font-size: 80px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 85%;
+    display: block; /* Ensures the link takes full width/height */
+}
+
+.menu-link-item-holder a:hover{
+    color: #e6ddb5;
+}
+
+/* Info columns styling */
+.menu-info {
+    display: flex;
+    gap: 2em;
+}
+
+.menu-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.menu-info-col a,
+.menu-info-col p {
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .menu-center-content {
+        flex-direction: column;
+    }
+    
+    .menu-link-item-holder a {
+        font-size: 60px;
+    }
+    
+    .menu-preview {
+        justify-content: flex-start;
+        margin-top: 2em;
+    }
+    
+    .menu-links,
+    .menu-overlay-bottom {
+        margin-left: 0  /* Smaller margin on mobile */
+    }
+    .menu-info{
+        display: block;
+    }
+    .menu-info-col{
+        margin-top: 1rem;
+    }
+}
