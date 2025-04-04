@@ -239,7 +239,7 @@ export default function Hero() {
         </div>
 
         <div className="video-content space-y-2 z-20 mt-auto mb-60">
-          <h1 className="lg:text-9xl text-5xl title my-8 mx-8 lg:mx-0">
+          <h1 className="lg:text-7xl text-5xl title my-8 mx-8 lg:mx-0">
             {slides[currentSlide].text}
           </h1>
           <div className="h-[2px] w-screen -ml-8 bg-white divider hidden lg:block"></div>
