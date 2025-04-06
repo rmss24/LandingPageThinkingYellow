@@ -35,7 +35,6 @@ export default function RootLayout({
           <Menu />
 
           <main className="flex-grow">{children}</main>
-          <div className="mx-4 mt-60"></div>
           <Footer />
         </div>
       </body>

@@ -11,7 +11,7 @@ export default function Hero() {
   const containerRef = useRef<HTMLElement | null>(null);
   const slidesRef = useRef<Array<HTMLDivElement | null>>([]);
   // Imposta isHovered a true di default
-  const [isHovered, setIsHovered] = useState(false); // Start with false
+  const [isHovered, setIsHovered] = useState(false); // Initialize as false
   const autoSlideTimerRef = useRef<NodeJS.Timeout | null>(null);
   const loadingRef = useRef<HTMLDivElement | null>(null);
   const router = useRouter();
@@ -94,9 +94,6 @@ export default function Hero() {
       gsap.killTweensOf(loadingRef.current);
     };
   }, [currentSlide]);
-
-  const handleMouseEnter = () => setIsHovered(true);
-  const handleMouseLeave = () => setIsHovered(false);
 
   useGSAP(
     () => {
@@ -183,9 +180,7 @@ export default function Hero() {
   // Modifica per prevenire sovrapposizione del cursore
   const handleSectionClick = (e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
-    if (target.closest("button")) return; // Ignora i pulsanti
-
-    // Non modificare lo stato del cursore qui
+    if (target.closest("button")) return; // Ignore buttons
     router.push(slides[currentSlide].path);
   };
 
@@ -200,7 +195,7 @@ export default function Hero() {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div className="flex items-center mx-auto w-[20%] z-20 mt-8 my-8">
+        <div className="flex items-center mx-auto w-[20%] z-20 mt-16 my-8">
           <span className="text-xl font-medium">{currentSlide + 1}</span>
           <div className="relative mx-4 w-80 h-1 bg-white/20">
             <div
@@ -239,14 +234,12 @@ export default function Hero() {
         </div>
 
         <div className="video-content space-y-2 z-20 mt-auto mb-60">
-          <h1 className="lg:text-7xl text-5xl title my-8 mx-8 lg:mx-0">
+          <h1 className="lg:text-7xl text-5xl title my-8 mx-8 ml-8">
             {slides[currentSlide].text}
           </h1>
           <div className="h-[2px] w-screen -ml-8 bg-white divider hidden lg:block"></div>
           <div className="lg:flex block flex-content my-8 mx-8 lg:mx-0">
-            <div className="projer-titles lg:flex my-8 hidden">
-              <div className="h-4 w-4 bg-white rounded-full self-center mr-2" />
-            </div>
+            <div className="projer-titles lg:flex my-8 hidden"></div>
 
             <div className="w-[30%] ml-[15%] absolute content-container contents lg:block my-8">
               <p className="text-lg! lg:mt-4 mt-8  mx-0 my-8">

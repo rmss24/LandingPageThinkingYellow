@@ -105,7 +105,7 @@ export default function OutroSection({ introItems }: OutroSectionProps) {
                     <p className="text-2xl font-bold text-white text-center px-4 text-outro">
                       {introItem.title}
                     </p>
-                    <button className="bg-gray-400/15 backdrop-blur-md text-white mt-8 px-6! py-3! rounded-lg transition-colors hover:bg-gray-800/15 font-bold w-3/4 max-w-xs">
+                    <button className="bg-gray-400/15 backdrop-blur-md text-white mt-8 px-6! py-3! rounded-lg transition-colors hover:bg-gray-800/15 font-bold lg:w-3/4 max-w-xs w-1/2">
                       Esplora
                     </button>
                   </div>

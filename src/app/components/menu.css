@@ -21,6 +21,22 @@
     cursor: pointer;
 }
 
+/* Fix for logo centering */
+.menu-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Logo filtering for color changes */
+.filter-white {
+    filter: brightness(0) invert(1); /* Makes the logo white */
+}
+
+.filter-black {
+    filter: brightness(0); /* Makes the logo black */
+}
+
 /* Overlay styling */
 .menu-overlay {
     position: fixed;
@@ -48,6 +64,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    position: relative; /* Added for proper logo positioning */
 }
 
 /* Center content with links and preview */

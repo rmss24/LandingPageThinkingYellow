@@ -2,6 +2,7 @@
 
 import React, {useState, useRef, useEffect} from "react"
 import Link from "next/link"
+import Image from "next/image" // Added for better image handling
 import "./menu.css"
 
 import gsap from "gsap";
@@ -9,9 +10,8 @@ import { useGSAP } from "@gsap/react";
 
 const menuLinks = [
     {path:"/", label: "Home"},
-    {path:"/aboutUs", label: "Chi Siamo"},
-    {path:"/work", label: "Progetti"},
-    {path:"/https://www.eppela.com", label: "Eppela"},
+    {path:"/showcase", label: "Progetti"},
+    {path:"https://www.eppela.com", label: "Eppela"}, // Fixed URL format
     {path: "/contact", label: "Contatti"}
 ]
  
@@ -53,26 +53,48 @@ export default function Menu(){
 
     return(
         <div className="menu-container z-50" ref={container}>
-            {/* Top navigation bar */}
-            <div className="menu-bar">
+            {/* Top navigation bar - modified layout */}
+            <div className="menu-bar flex justify-between items-center">
                 <div className="menu-open" onClick={toggleMenu}>
                     <p>Menu</p>
                 </div>
                 <div className="menu-logo">
-                    <Link href={"/"}>Logo</Link>
+                    <Link href={"/"}>
+                        <Image 
+                            src="/icons/logo.svg" 
+                            alt="Company Logo" 
+                            width={120} 
+                            height={40} 
+                            className={isMenuOpen ? "filter-black w-12" : "filter-white w-12"} 
+                        />
+                    </Link>
+                </div>
+                <div className="chi-siamo-link">
+                    <Link href="/aboutUs">Chi Siamo</Link>
                 </div>
             </div>
 
             {/* Overlay menu */}
             <div className="menu-overlay">
                 <div className="menu-overlay-content">
-                    {/* Top bar in overlay */}
-                    <div className="menu-overlay-top">
-                        <div className="menu-logo">
-                            <Link href={"/"}>Logo</Link>
-                        </div>
+                    {/* Top bar in overlay - modified layout */}
+                    <div className="menu-overlay-top flex justify-between items-center">
                         <div className="menu-close" onClick={toggleMenu}>
                             <p>Close</p>
+                        </div>
+                        <div className="menu-logo">
+                            <Link href={"/"}>
+                                <Image 
+                                    src="/icons/logo.svg" 
+                                    alt="Company Logo" 
+                                    width={120} 
+                                    height={40} 
+                                    className="filter-black w-12" 
+                                />
+                            </Link>
+                        </div>
+                        <div className="chi-siamo-link">
+                            <Link href="/aboutUs">Chi Siamo</Link>
                         </div>
                     </div>
                     
