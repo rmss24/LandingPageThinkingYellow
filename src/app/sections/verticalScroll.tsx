@@ -362,12 +362,12 @@ export default function VerticalScrolling() {
 
         {/* Section Counter */}
         <div className="section-counter fixed right-8 top-1/2 transform -translate-y-1/2 z-20 flex flex-col items-center">
-          <div className="px-4! py-2! bg-black/30 backdrop-blur-sm rounded-full text-white font-bold">
+          <div className="px-4! py-2! bg-black/30 backdrop-blur-sm rounded-full text-white font-bold  my-4! lg:my-2!">
             <span className="text-[#d1b42f]">{currentSection}</span>
             <span className="px-1!">/</span>
             <span>{totalSections}</span>
           </div>
-          <div className="h-16 w-px bg-white/50 my-2"></div>
+          <div className="h-16 w-px bg-white/50 my-4! lg:my-2!  hidden lg:block "></div>
           <div className="flex flex-col space-y-2">
             {Array.from({ length: totalSections }).map((_, index) => (
               <div
