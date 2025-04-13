@@ -1,15 +1,26 @@
-import Image from "next/image";
 import VerticalScrolling from "./sections/verticalScroll";
-import Hero from "./sections/hero";
-import StrategySection from "./sections/strategy";
+import OutroSection from "@/app/components/outroSection"; // Import the new OutroSection component
+
 export default function Home() {
+  const introItems = [
+    {
+      image: "/images/anteprima.jpg",
+      title: "Marketing",
+    },
+    {
+      image: "/images/crowdfunding.jpg",
+      title: "Responsabilità",
+    },
+    {
+      image: "/images/main-port-010-1.jpg",
+      title: "Crowdfunding",
+    },
+  ];
+
   return (
     <div className="">
-      <Hero />
-      <main>
-        <StrategySection />
-      </main>
       <VerticalScrolling />
+      <OutroSection introItems={introItems} />
     </div>
   );
 }

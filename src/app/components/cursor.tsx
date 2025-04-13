@@ -172,8 +172,9 @@ export default function Cursor({ isHovered }: { isHovered: boolean }) {
         justifyContent: "center",
         alignItems: "center",
         display: "flex",
+        zIndex: 99999, // Set an extremely high z-index to ensure it's above everything
       }}
-      className="top-0 left-0 fixed cursor-none rounded-full z-30 pointer-events-none"
+      className="top-0 left-0 fixed cursor-none rounded-full pointer-events-none"
     >
       {isHovered && !isStuck && (
         <p className="text-black! font-semibold flex items-center absolute text-center gap-1 pointer-events-none z-50">
